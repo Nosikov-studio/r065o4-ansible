@@ -14,7 +14,7 @@
   #  - adminer
   #  - siteinstall
     - rsyncinstall
-    - server
+  #  - server
   #  - adminer2
     - pm2
   #  - pm2-
