@@ -16,8 +16,9 @@
     - rsyncinstall
   #  - server
   #  - adminer2
-    - pm2
+  #  - pm2
   #  - pm2-
     - client
+    - pm2
     # - phpmyadmin
     # - letsencrypt
