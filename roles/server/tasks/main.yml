@@ -64,7 +64,7 @@
 
     - name: Install Node.js dependencies using npm
       community.general.npm:
-        path: /var/www/ws/server/
+        path: /var/www/ws/
         state: present
 
 #---------------------------------------------------------2
