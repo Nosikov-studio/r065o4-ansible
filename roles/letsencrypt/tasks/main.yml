@@ -39,15 +39,15 @@
 #---------------------------------------------------------11-3
     - name: Insert/Update configuration using a local file
       ansible.builtin.blockinfile:
-        path: /etc/nginx/sites-available/truruki
+        path: /etc/nginx/sites-available/truruky
         block: "{{ lookup('ansible.builtin.file', 'files/new_frag') }}"
         marker: "## {mark} ANSIBLE MANAGED BLOCK"
 
     - name: adding a line
       lineinfile:
-        path: /etc/nginx/sites-available/truruki
+        path: /etc/nginx/sites-available/truruky
         insertafter: '^listen 80;'
-        line: 'return 301 https://truruki.ru$request_uri;'
+        line: 'return 301 https://truruky.ru$request_uri;'
 
     - name: Reload nginx
       service:
