@@ -3,6 +3,8 @@ listen 443 ssl;
 listen [::]:443 ssl;
 ssl_certificate /etc/letsencrypt/live/truruky.ru/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/truruky.ru/privkey.pem;
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ecdh_curve auto;
 server_name truruky.ru www.truruky.ru;
 root /var/www/ws;
 index index.php index.html index.htm index.nginx-debian.html;
@@ -12,8 +14,8 @@ location / {
 
      }   
          # Проксирование WebSocket
-    location /ws/ {
-        proxy_pass http://127.0.0.1:8080/;  # Поднимается websocket сервер локально на 8080
+    location /ws {
+        proxy_pass http://127.0.0.1:8080;  # Поднимается websocket сервер локально на 8080
         proxy_http_version 1.1;
 
         proxy_set_header Upgrade $http_upgrade;
